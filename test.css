@@ -1,0 +1,55 @@
+body {
+    background: rgb(23, 21, 32);
+    }
+    
+    ::-webkit-scrollbar {
+    display: none;
+    }
+    
+    div {
+    /* note vh and vw switched */
+    display: block;
+    margin-left: 4.5vw;
+    width: 90vh;
+    height: 90vw;
+    transform-origin: top left;
+    transform: rotate(-90deg) translateX(-100vh);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    outline: white solid 5px;
+    }
+    
+    article {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+    border: 5px, dotted, black;
+    transform-origin: top left;
+    transform: rotate(90deg) translateY(-100vh);
+    }
+    
+    section {
+    width: 100vw;
+    height: 100vh;
+    /* scroll-snap-align: start; */
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    }
+    
+    section:nth-of-type(odd) {
+    background: #6d7f9a;
+    color: #fff;
+    }
+    
+    section:nth-of-type(even) {
+    background: rgb(173, 158, 178);
+    color: #fff;
+    }
+
+
+
+
