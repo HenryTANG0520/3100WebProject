@@ -63,8 +63,9 @@ nav a:hover {
   top: 0;
   left: 0;
   padding-right: 9rem;
-  margin-right: 4rem;
 }
+
+/* 轮播背景图 */
 
 .background-slider {
   position: absolute;
@@ -102,7 +103,7 @@ nav a:hover {
 .slide.elephant {
   background-image: url("/img/elephant/wlds43_654640_2400.jpg");
 }
-
+/* ------------------------ */
 
 article {
   display: flex;
@@ -134,7 +135,7 @@ section:nth-of-type(even) {
 }
 
 .text-content {
-  max-width: calc(100vh - 4rem);
+  max-width: calc(100vh - 2rem);
   margin-bottom: 1rem;
 }
 
@@ -145,6 +146,8 @@ p {
 .image-container,
 .chart-container {
   text-align: center;
+  max-width: calc(100vh - 2rem);
+  margin-bottom: 1rem;
 }
 
 footer {
