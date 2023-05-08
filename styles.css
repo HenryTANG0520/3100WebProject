@@ -143,22 +143,12 @@ section {
 
 }
 
-/* section:nth-of-type(odd) {
-  background: #6d7f9a;
-  color: #fff;
-}
-
-section:nth-of-type(even) {
-  background: rgb(173, 158, 178);
-  color: #fff;
-} */
-
 .text-content {
-  max-width: calc(100vh - 4rem);
+  max-width: calc(100vh - 2rem);
   margin-bottom: 1rem;
   overflow-wrap: break-word;
   /* 添加以下属性来实现自动换列 */
-  column-width: calc(100vh - 4rem);
+  column-width: calc(100vh - 2rem);
   column-gap: 2rem;
   column-fill: auto;
   height: 100%;
