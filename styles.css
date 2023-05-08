@@ -10,6 +10,9 @@ body {
   display: none;
 }
 
+.free-content {
+  min-width: 200vh;
+}
 
 header {
   background-color: #333;
@@ -36,37 +39,40 @@ header {
   text-align: center;
   font-size: 2rem;
   line-height: 3rem;
-  color:antiquewhite;
+  color: antiquewhite;
 }
 
-h1{
+h1 {
   font-size: 4rem;
   margin-left: 1rem;
   padding-top: 0.5rem;
 }
-h2{
+
+h2 {
   margin-top: 8rem;
   font-size: 4rem;
 }
+
 nav {
   display: flex;
   justify-content: center;
   align-self: center;
   margin-top: 1.5rem;
-  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 nav a {
-  padding-bottom:1.5rem;
+  padding-bottom: 1.5rem;
   color: white;
   margin: 0 0.5rem;
   text-decoration: none;
-  transition: all 0.3s ease; /* 添加渐变效果 */
+  transition: all 0.3s ease;
+  /* 添加渐变效果 */
 }
 
 nav a:hover {
   border-bottom: 0.5rem solid whitesmoke;
-  padding-bottom:1rem;
+  padding-bottom: 1rem;
 }
 
 .scroll-container {
@@ -122,6 +128,7 @@ nav a:hover {
 .slide.elephant {
   background-image: url("/img/elephant/wlds43_654640_2400.jpg");
 }
+
 /* ------------------------ */
 
 article {
