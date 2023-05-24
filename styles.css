@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  
 }
 
 header {
@@ -18,21 +19,6 @@ header {
   justify-content: space-between;
 }
 
-.intro {
-  position: absolute;
-}
-
-.intro-heading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  text-align: center;
-  font-size: 2rem;
-  line-height: 3rem;
-  color: antiquewhite;
-}
 
 h1 {
   font-size: 4rem;
@@ -70,6 +56,23 @@ nav a:hover {
 
 
 /* 轮播背景图 */
+.intro {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 设置轮播图占据整个视窗的高度 */
+}
+
+.intro-heading {
+  position: absolute; /* 使用绝对定位将标题覆盖在轮播图上 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: antiquewhite;
+}
 
 .background-slider {
   background-color: black;
@@ -88,8 +91,6 @@ nav a:hover {
   background-position: center;
   transition: opacity 1s;
   filter: brightness(50%);
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .slide.active {
@@ -107,6 +108,7 @@ nav a:hover {
 .slide.elephant {
   background-image: url("/img/elephant/wlds43_654640_2400.jpg");
 }
+
 
 /* ------------------------ */
 
@@ -130,7 +132,8 @@ section {
 }
 .paragraph{
   position: relative;
-  width: 33.33%;
+  width: 30%;
+  margin: 1%;
   float: left;
 }
 h3{
@@ -140,8 +143,13 @@ h3{
 p {
   font-size: 1.5rem;
 }
-
-
+li{
+  list-style:none;
+}
+a{
+  text-decoration: none;
+  /* color:darkslategray; */
+}
 
 footer {
   position: relative;
