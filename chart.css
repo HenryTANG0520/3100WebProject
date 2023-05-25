@@ -8,3 +8,23 @@
     align-items: center;
     height: 20%;
   }
+  .chart{
+    width: 70%;
+    margin: auto;
+  }
+  button{
+    margin: 0 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #7c7c7c;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  button:hover{
+    background-color: #dadada;
+    color: #7c7c7c;
+    
+  }
