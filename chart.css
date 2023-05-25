@@ -11,6 +11,10 @@
   .chart{
     width: 70%;
     margin: auto;
+    
+  }
+  #line-chart{
+    margin-bottom: 8rem;
   }
   button{
     margin: 0 10px;
