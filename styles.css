@@ -118,6 +118,8 @@ section {
   width: 100vw;
   /* height: 100vh; */
   /* overflow-y: hidden; */
+  border-top: 1px, solid;
+  border-top: #333;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,14 +140,16 @@ section {
 }
 h3{
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 p {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 li{
   list-style:none;
 }
+
+
 a{
   text-decoration: none;
   /* color:darkslategray; */

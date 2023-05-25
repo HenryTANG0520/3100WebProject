@@ -1,0 +1,10 @@
+  #chart-1 {
+    flex-grow: 1;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+  }

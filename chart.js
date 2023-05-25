@@ -1,99 +1,60 @@
-const dataSource = "data/cleaned-data/line-chart-1.csv";
-const chartDiv = document.getElementById("chart-1");
+// Path to CSV file
+const csvFilePath = 'data/cleaned-data/line-chart-1.csv';
 
-function loadData() {
-  Plotly.d3.csv(dataSource, (data) => processData(data));
+// Function to read CSV and parse data
+async function readLineChartCSV() {
+  const response = await fetch(csvFilePath);
+  const csvContent = await response.text();
+  const data = Plotly.d3.csv.parse(csvContent);
+  return data;
 }
 
-function processData(allRows) {
-  let x = [], y1 = [], y2 = [], y3 = [];
-  for (let i in allRows) {
-    let row = allRows[i];
-    x.push(row["Year"]);
-    y1.push(row["Northen White Rhino"]);
-    y2.push(row["Africa Elephant"]);
-    y3.push(row["Whale"]);
-  }
-  makePlot(x, y1, y2, y3);
-}
+// Function to update plot based on button value
+async function updatePlot(buttonValue) {
+  const data = await readLineChartCSV();
 
-function makePlot(x, y1, y2, y3) {
-  let trace1 = {
-    x: x,
-    y: y1,
-    mode: 'lines+markers',
-    name: '大象'
-  };
+  const speciesMap = { 1: 'Northen White Rhino', 2: 'Africa Elephant', 3: 'Whale' };
+  const species = speciesMap[buttonValue];
 
-  let trace2 = {
-    x: x,
-    y: y2,
-    mode: 'lines+markers',
-    name: '鲸鱼'
-  };
+  const plotData = [];
 
-  let trace3 = {
-    x: x,
-    y: y3,
-    mode: 'lines+markers',
-    name: '犀牛'
-  };
-
-  let data = [trace1, trace2, trace3];
-
-  let layout = {
-    title: "物种数量变化折线图",
-    xaxis: {
-      title: "年份"
-    },
-    yaxis: {
-      title: "数量"
-    },
-    showlegend: true,
-    legend: {
-      x: 0.9,
-      xanchor: "left",
-      y: -0.9
-    }
-  };
-
-  let config = {
-    responsive: true,
-    scrollZoom: true,
-    displayModeBar: false
-  };
-
-  Plotly.newPlot(chartDiv, data, layout, config);
-}
-
-function updatePlot(species) {
-  Plotly.d3.csv(dataSource, (data) => {
-    let x = [], y = [];
-    for (let i in data) {
-      let row = data[i];
-      x.push(row["Year"]);
-      y.push(row[species]);
-    }
-    updateTrace(species, x, y);
-  });
-}
-
-function updateTrace(species, x, y) {
-  Plotly.d3.csv(dataSource, (data) => {
-    let update = {
-      y: [y]
-    };
-    Plotly.update(chartDiv, update, { traces: findTraceIndex(data, species) });
-  });
-}
-
-function findTraceIndex(data, species) {
-  for (let i in data) {
-    if (data[i].name === species) {
-      return i;
+  if (species) {
+    plotData.push(getTrace(data, species));
+  } else {
+    for (let key in speciesMap) {
+      plotData.push(getTrace(data, speciesMap[key]));
     }
   }
-  return -1;
+
+  const layout = {
+    title: '物种数量变化折线图',
+    xaxis: { title: '年份' },
+    yaxis: { title: '数量' },
+    height: '100%' // 图表高度设置为 '100%'，使其占满容器
+  };
+
+  Plotly.react('chart-1', plotData, layout);
 }
 
-loadData();
+// Function to generate trace for a species
+function getTrace(data, species) {
+  const x = [];
+  const y = [];
+
+  data.forEach(row => {
+    if (row[species]) {
+      x.push(row.Year);
+      y.push(+row[species]);
+    }
+  });
+
+  return {
+    x: x,
+    y: y,
+    mode: 'lines+markers',
+    name: species
+  };
+}
+
+// Initialize the plot with default value (0)
+updatePlot(0);

@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>生物多样性危机：我们的地球需要我们的关注</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="chart.css">
   <script src="script.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
@@ -14,16 +15,16 @@
 <body>
   <header>
     <nav>
-      <a href="#">主页</a>
-      <a href="#">物种数量变化</a>
-      <a href="#1">动物在自然中的作用</a>
-      <a href="#2">狩猎原因</a>
-      <a href="#">我们能做什么</a>
-      <a href="#">呼吁保护动物</a>
+      <a href="#1">主页</a>
+      <a href="#2">物种数量变化</a>
+      <a href="#3">动物在自然中的作用</a>
+      <a href="#4">狩猎原因</a>
+      <a href="#5">我们能做什么</a>
+      <a href="#6">呼吁保护动物</a>
     </nav>
   </header>
 
-  <section>
+  <section id="1">
     <div class="intro">
       <div class="background-slider">
         <div class="slide active rhino"></div>
@@ -31,27 +32,52 @@
         <div class="slide elephant"></div>
       </div>
       <h1 class="intro-heading">生物多样性危机：<br>我们的地球需要我们的关注</h1>
-
+    </div>
   </section>
 
-  <section>
-    <div class="chart" id="chart-1"></div>
-    <div id="button-group">
-      <button onclick="updatePlot('Northen White Rhino')">大象</button>
-      <button onclick="updatePlot('Africa Elephant')">鲸鱼</button>
-      <button onclick="updatePlot('Whale')">犀牛</button>
-    </div>
-    </div>
-  
-    <script src="chart.js"></script>
-  </section>
-  </div>
 
+  <!-- 物种数量的变化 -->
   <div class="content">
     <article>
+      <section id="2">
+        <div class="text-content">
+          <h2>物种数量变化</h2>
+          <p>
+            在过去的十年中，大约有9,396只非洲犀牛因为偷猎而丧生。从2008年开始，偷猎的数量在整个非洲持续增加，直到2015年达到峰值，当年有1,349只犀牛被杀。幸运的是，自那时以来，整个非洲大陆的偷猎数量有所下降，但至少每天仍有一只犀牛被杀。在南非，这个问题尤为严重，2013年至2017年期间，每年有超过1,000只犀牛被杀。2022年，南非有448只犀牛被杀，相比2021年减少了三只(<a
+              href="https://www.savetherhino.org/rhino-info/poaching-stats/" target="_blank">Save
+              the Rhino, 2018</a>)。
+          </p>
+
+          <p>
+            关于大象，全球大约有450,000只。非洲大象的数量大约是亚洲大象的十倍。2015年，非洲大象的数量约为415,000只，而亚洲大象的数量在40,000到50,000只之间。然而，非洲大象的数量在过去的几个世纪里已经缩减了98%，从1500年的2500万只减少到了现在的数量。据估计，对于每100只活着的大象，大约有12只已经死亡。这表明大象的数量正在下降。而亚洲大象的数量在过去的一个世纪中减少了一半，从1900年初的100,000只减少到现在的40,000到50,000只(<a
+              href="https://ourworldindata.org/elephant-populations" target="_blank">Ritchie,
+              2022b</a>)。
+          </p>
+        </div>
+
+
+      </section>
+
+      <!-- 图表1 -->
+      <div class="chart" id="chart-conta">
+
+        <div id="chart-1"></div>
+
+        <div class="button-group">
+          <button onclick="updatePlot('Northen White Rhino')">大象</button>
+          <button onclick="updatePlot('Africa Elephant')">鲸鱼</button>
+          <button onclick="updatePlot('Whale')">犀牛</button>
+        </div>
+        <script src="chart.js"></script>
+      </div>
+
+
+      <!-- ----------------------- -->
+
+
       <!-- 物种减少所带来的危害 （文字介绍）-->
-      <section>
-        <div class="text-content" id="1">
+      <section id="2">
+        <div class="text-content">
           <h2>动物在自然界中的作用</h2>
           <div class="paragraph">
             <h3>鲸鱼</h3>
@@ -128,7 +154,8 @@
               <p> 袋鼠：澳洲的袋鼠产业依赖于大型袋鼠的猎杀，以生产肉类和皮革产品(<a
                   href="https://www.panaprium.com/blogs/i/endangered-animals-clothing" target="_blank">Assoune,
                   2020</a>；<a href="https://animalsaustralia.org/our-work/shooting-and-hunting/"
-                  target="_blank">Shooting & Hunting of Animals in Australia, n.d.</a>)。</p>
+                  target="_blank">Shooting &
+                  Hunting of Animals in Australia, n.d.</a>)。</p>
             </li>
             <li>
               <p>其他本土动物：澳洲的一些标志性动物，如海豚、飞狐和袋熊，也在联邦原住民土地法下被合法猎杀，尽管它们被认为处于濒危状态(<a
