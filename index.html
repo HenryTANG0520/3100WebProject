@@ -8,6 +8,7 @@
   <title>生物多样性危机：我们的地球需要我们的关注</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
@@ -33,7 +34,17 @@
 
   </section>
 
-
+  <section>
+    <div class="chart" id="chart-1"></div>
+    <div id="button-group">
+      <button onclick="updatePlot('Northen White Rhino')">大象</button>
+      <button onclick="updatePlot('Africa Elephant')">鲸鱼</button>
+      <button onclick="updatePlot('Whale')">犀牛</button>
+    </div>
+    </div>
+  
+    <script src="chart.js"></script>
+  </section>
   </div>
 
   <div class="content">
