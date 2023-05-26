@@ -67,7 +67,10 @@ updatePlot(0);
 var data = [{
     values: [20, 20, 20, 10, 10, 10, 10],
     labels: ['Ship Strikes', 'Pollution', 'Beaching', 'Predators', 'Illness', 'Starvation', 'Hunting'],
-    type: 'pie'
+    type: 'pie',
+    marker:{
+      colors:['#8a8a8a','#ababab','#c0c0c0','#cbcbcb','#dedede','#f0f0f0','darkred']
+    }
   }];
   
   var layout = {
@@ -89,7 +92,10 @@ var data = [{
 var data = [{
     values: [33.1, 31.5, 19.9],
     labels: ['Natural Causes', 'Ivory Poaching', 'Human-Elephant Conflicts'],
-    type: 'pie'
+    type: 'pie',
+    marker:{
+      colors:['#aaa','darkred','#ccc']
+    }
   }];
   
   var layout = {
@@ -112,7 +118,10 @@ var data = [{
 var data_rhino = [{
     values: [80, 20],
     labels: ['Poaching for horns', 'Uncontrolled hunting'],
-    type: 'pie'
+    type: 'pie',
+    marker:{
+      colors:['darkred','a0a0a0']
+    }
   }];
   
   var layout_rhino = {
@@ -153,10 +162,10 @@ async function createLineChart() {
     y: y,
     mode: 'lines+markers',
     line: {
-      color: 'blue'
+      color: '#7c7c7c'
     },
     marker: {
-      color: 'blue',
+      color: '#333',
       size: 6
     },
     name: 'Southern White Rhino population'

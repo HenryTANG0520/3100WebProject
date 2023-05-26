@@ -52,6 +52,7 @@ nav a {
 }
 
 nav a:hover {
+  font-weight: bolder;
   border-bottom: 0.5rem solid white;
   padding-bottom: 1rem;
 }
@@ -103,15 +104,15 @@ nav a:hover {
 }
 
 .slide.rhino {
-  background-image: url("/img/rhino/rhino_hurt_1.jpg");
+  background-image: url("img/rhino/rhino_hurt_1.jpg");
 }
 
 .slide.whale {
-  background-image: url("/img/whale/whale-hurt.webp");
+  background-image: url("img/whale/whale-hurt.webp");
 }
 
 .slide.elephant {
-  background-image: url("/img/elephant/wlds43_654640_2400.jpg");
+  background-image: url("img/elephant/wlds43_654640_2400.jpg");
 }
 
 
@@ -164,14 +165,16 @@ h4 {
   color: #333;
 }
 
+h5{
+  font-size: 1.5rem;
+}
 .font-2 {
-  font-weight: lighter;
   margin-top: 0;
   padding: 1rem;
 }
 
 .square-container{
-  height: 10rem;
+  height: 14em;
   border: #7c7c7c solid 0.5px;
   border-radius: 0 0 0.5rem 0.5rem;
 }
@@ -190,7 +193,7 @@ h4 {
 /* 第五部分，我们能做什么的背景图设置 */
 .background-img{
   position:relative;
-  background-image: url('/img/rhino/rhino-sanctuary.jpg');
+  background-image: url('img/rhino/rhino-sanctuary.jpg');
     /* 图片自适应容器大小 */
     background-size: cover; 
 
@@ -212,7 +215,7 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/img/rhino/rhino-sanctuary.jpg');
+  background-image: url('img/rhino/rhino-sanctuary.jpg');
   background-size: cover;
   background-position: center;
   filter: brightness(50%); /* 控制背景图片的亮度，可根据需要调整百分比值 */
