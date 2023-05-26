@@ -52,7 +52,7 @@ nav a {
 }
 
 nav a:hover {
-  border-bottom: 0.5rem solid whitesmoke;
+  border-bottom: 0.5rem solid white;
   padding-bottom: 1rem;
 }
 
@@ -172,13 +172,10 @@ h4 {
 
 .square-container{
   height: 10rem;
-  background-color: #dadada;
+  border: #7c7c7c solid 0.5px;
   border-radius: 0 0 0.5rem 0.5rem;
 }
-/* .img-container{
-  width: 100%;
-  overflow: hidden;
-} */
+
 
 .image {
   display: block;
@@ -189,9 +186,58 @@ h4 {
   object-fit: cover;
 }
 
+
+/* 第五部分，我们能做什么的背景图设置 */
+.background-img{
+  position:relative;
+  background-image: url('/img/rhino/rhino-sanctuary.jpg');
+    /* 图片自适应容器大小 */
+    background-size: cover; 
+
+    /* 图片在容器中居中对齐 */
+    background-position: center; 
+
+} 
+.background-img::before {
+  content: '';
+  position: absolute;
+
+  background-color: rgba(0, 0, 0, 0.5); /* 可选，添加叠加层来进一步调节背景 */
+  mix-blend-mode: multiply; /* 可选，通过混合模式调节背景颜色与图片的叠加效果 */
+}
+.background-img::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/rhino/rhino-sanctuary.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(50%); /* 控制背景图片的亮度，可根据需要调整百分比值 */
+}
+
+.background-img .text-content{
+  color: white;
+  z-index: 2;
+  padding-bottom: 8rem;
+}
+.background-img .text-content p{
+  color: white;
+}
+.background-img .text-content h2{
+  border-left:solid 1rem #dadada
+}
+.background-img a{
+  color: rgb(252, 224, 186);
+}
+
+
+/* ------------------------------ */
 a {
   text-decoration: none;
-  /* color:darkslategray; */
+  color:rgb(155, 155, 155);
 }
 
 footer {
@@ -202,6 +248,11 @@ footer {
   text-align: center;
 }
 
+footer p{
+  color:white;
+}
+
 .conclusion {
   height: 90vh;
 }
+

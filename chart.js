@@ -33,7 +33,7 @@ async function updatePlot(buttonValue) {
     height: '100%' // 图表高度设置为 '100%'，使其占满容器
   };
 
-  Plotly.react('chart-1', plotData, layout);
+  Plotly.react('line-chart-1', plotData, layout);
 }
 
 // Function to generate trace for a species
@@ -129,3 +129,51 @@ var data_rhino = [{
   
   Plotly.newPlot('chart-pie-3', data_rhino, layout_rhino);
   
+// 南方犀牛恢复数据
+
+
+// 引入CSV文件并解析数据
+async function loadData() {
+  const csvFilePath = 'data/cleaned-data/southern-white-rhinos.csv';
+  const response = await fetch(csvFilePath);
+  const csvContent = await response.text();
+  const data = Plotly.d3.csv.parse(csvContent);
+  return data;
+}
+
+// 处理数据并绘制折线图
+async function createLineChart() {
+  const data = await loadData();
+
+  const x = data.map(row => row.Year);
+  const y = data.map(row => +row['Southern White Rhino population (AfRSG & other sources, 2019)']);
+
+  const trace = {
+    x: x,
+    y: y,
+    mode: 'lines+markers',
+    line: {
+      color: 'blue'
+    },
+    marker: {
+      color: 'blue',
+      size: 6
+    },
+    name: 'Southern White Rhino population'
+  };
+
+  const layout = {
+    title: 'Southern White Rhino Population',
+    xaxis: {
+      title: 'Year'
+    },
+    yaxis: {
+      title: 'Population'
+    }
+  };
+
+  Plotly.newPlot('line-chart-2', [trace], layout);
+}
+
+// 调用函数绘制折线图
+createLineChart();
