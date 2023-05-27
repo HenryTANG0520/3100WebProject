@@ -116,7 +116,7 @@ Plotly.newPlot('chart-pie-2', data, layout);
 
 var data_rhino = [{
   values: [80, 20],
-  labels: ['Poaching for horns', 'Uncontrolled hunting'],
+  labels: ['Horn Poaching', 'Uncontrolled hunting'],
   type: 'pie',
   marker: {
     colors: ['#B22222', 'a0a0a0']
