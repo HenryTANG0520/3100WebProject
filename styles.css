@@ -27,7 +27,7 @@ h1 {
 }
 
 h2 {
-  border-left: solid 1rem #7c7c7c;
+  border-left: solid 1rem #DEB887;
   padding-left: 1.5rem;
   margin-top: 8rem;
   font-size: 4rem;
@@ -174,7 +174,7 @@ h5{
 }
 
 .square-container{
-  height: 14em;
+  height: 10rem;
   border: #7c7c7c solid 0.5px;
   border-radius: 0 0 0.5rem 0.5rem;
 }
@@ -230,10 +230,10 @@ h5{
   color: white;
 }
 .background-img .text-content h2{
-  border-left:solid 1rem #dadada
+  border-left:solid 1rem #F5DEB3
 }
 .background-img a{
-  color: rgb(252, 224, 186);
+  color: #F5DEB3;
 }
 
 
