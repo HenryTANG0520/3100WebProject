@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -109,7 +113,7 @@ nav a:hover {
 }
 
 .slide.elephant {
-  background-image: url("img/elephant/wlds43_654640_2400.jpg");
+  background-image: url("img/elephant/elephant-hurt.jpg");
 }
 
 
