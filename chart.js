@@ -16,12 +16,7 @@ function updatePlot(animal) {
 
     for (let i = 1; i < columnNames.length; i++) {
       let species = columnNames[i];
-      if (animal === 'Whale' && species !== 'Year' && species !== 'Entity' && species !== 'Code') {
-        // Special handling for whale data
-        let speciesData = data.filter(row => row['Entity'] === species);
-        plotData.push(getTrace(speciesData, 'Year', species));
-      } else if (species !== 'Year') {
-        // Handling for elephant and rhino data
+      if (species !== 'Year') {
         plotData.push(getTrace(data, 'Year', species));
       }
     }
