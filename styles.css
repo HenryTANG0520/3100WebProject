@@ -50,7 +50,7 @@ nav a {
   margin-right: 2rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  /* 添加渐变效果 */
+  /* Add ease effect */
 }
 
 nav a:hover {
@@ -61,17 +61,16 @@ nav a:hover {
 
 
 
-/* 轮播背景图 */
+/* background image slider */
 .intro {
   position: relative;
   width: 100%;
   height: 100vh;
-  /* 设置轮播图占据整个视窗的高度 */
 }
 
 .intro-heading {
   position: absolute;
-  /* 使用绝对定位将标题覆盖在轮播图上 */
+  /* use absolute position to let title on the top of images */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -191,7 +190,7 @@ h5{
 }
 
 
-/* 第五部分，我们能做什么的背景图设置 */
+/* Background image settings */
 .background-img{
   position:relative;
   /* background-image: url('img/rhino/rhino-sanctuary.jpg'); */
@@ -229,9 +228,9 @@ h5{
 .background-img a{
   color: #F5DEB3;
 }
-
-
 /* ------------------------------ */
+
+
 a {
   text-decoration: none;
   color:rgb(155, 155, 155);

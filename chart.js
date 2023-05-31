@@ -58,7 +58,7 @@ function getTrace(data, xColumn, yColumn) {
 updatePlot('Whale');
 
 
-// 鲸鱼饼图
+// Whale Pie Chart
 var data = [{
   values: [20, 20, 20, 10, 10, 10, 10],
   labels: ['Ship Strikes', 'Pollution', 'Beaching', 'Predators', 'Illness', 'Starvation', 'Hunting'],
@@ -82,7 +82,7 @@ var layout = {
 
 Plotly.newPlot('chart-pie-1', data, layout);
 
-// 大象饼图
+// Elephant Pie Chart
 
 var data = [{
   values: [33.1, 31.5, 19.9],
@@ -107,7 +107,7 @@ var layout = {
 
 Plotly.newPlot('chart-pie-2', data, layout);
 
-// 犀牛饼图
+// Rhino Pie Chart
 
 var data_rhino = [{
   values: [80, 20],
@@ -132,8 +132,183 @@ var layout_rhino = {
 
 Plotly.newPlot('chart-pie-3', data_rhino, layout_rhino);
 
+// Elephant Map Chart
+const csvFilePath1 = 'data/elephant/ivory-trade-2.csv';
 
-// 犀牛折线图
+//country codes
+const countryCodes = {
+  'AE': 'United Arab Emirates',
+  'AO': 'Angola',
+  'AT': 'Austria',
+  'AU': 'Australia',
+  'BD': 'Bangladesh',
+  'BE': 'Belgium',
+  'BF': 'Burkina Faso',
+  'BI': 'Burundi',
+  'BJ': 'Benin',
+  'BW': 'Botswana',
+  'CA': 'Canada',
+  'CD': 'Democratic Republic of the Congo',
+  'CF': 'Central African Republic',
+  'CG': 'Republic of the Congo',
+  'CH': 'Switzerland',
+  'CI': 'Ivory Coast',
+  'CM': 'Cameroon',
+  'CN': 'China',
+  'CY': 'Cyprus',
+  'CZ': 'Czech Republic',
+  'DE': 'Germany',
+  'DK': 'Denmark',
+  'EE': 'Estonia',
+  'EG': 'Egypt',
+  'ES': 'Spain',
+  'IE': 'Ireland',
+  'IL': 'Israel',
+  'IN': 'India',
+  'IT': 'Italy',
+  'JO': 'Jordan',
+  'JP': 'Japan',
+  'KE': 'Kenya',
+  'KH': 'Cambodia',
+  'KR': 'South Korea',
+  'LA': 'Laos',
+  'LK': 'Sri Lanka',
+  'LV': 'Latvia',
+  'ML': 'Mali',
+  'MM': 'Myanmar',
+  'MO': 'Macao',
+  'MT': 'Malta',
+  'MW': 'Malawi',
+  'MX': 'Mexico',
+  'MY': 'Malaysia',
+  'MZ': 'Mozambique',
+  'NA': 'Namibia',
+  'NG': 'Nigeria',
+  'NL': 'Netherlands',
+  'NO': 'Norway',
+  'NP': 'Nepal',
+  'NZ': 'New Zealand',
+  'PA': 'Panama',
+  'PH': 'Philippines',
+  'PL': 'Poland',
+  'PT': 'Portugal',
+  'QA': 'Qatar',
+  'RO': 'Romania',
+  'RW': 'Rwanda',
+  'SA': 'Saudi Arabia',
+  'SD': 'Sudan',
+  'SE': 'Sweden',
+  'SG': 'Singapore',
+  'SI': 'Slovenia',
+  'SN': 'Senegal',
+  'SS': 'South Sudan',
+  'TD': 'Chad',
+  'TG': 'Togo',
+  'TH': 'Thailand',
+  'TN': 'Tunisia',
+  'TR': 'Turkey',
+  'TW': 'Taiwan',
+  'TZ': 'Tanzania',
+  'UG': 'Uganda',
+  'US': 'United States',
+  'VN': 'Vietnam',
+  'ZA': 'South Africa',
+  'ZM': 'Zambia',
+  'ZW': 'Zimbabwe'
+}
+
+// to parse csv file
+function parseCSV(text) {
+  let lines = text.split('\n');
+  let headers = lines[0].split(',');
+  let data = lines.slice(1).map(line => {
+    let obj = {};
+    let row = line.split(',');
+    headers.forEach((header, i) => {
+      obj[header] = row[i];
+    });
+    return obj;
+  });
+  return data;
+}
+
+// to fetch csv file
+fetch(csvFilePath1)
+  .then(response => response.body)
+  .then(body => {
+    const reader = body.getReader();
+    return new ReadableStream({
+      start(controller) {
+        function push() {
+          reader.read().then(({
+            done,
+            value
+          }) => {
+            if (done) {
+              controller.close();
+              return;
+            }
+            controller.enqueue(value);
+            push();
+          })
+        }
+        push();
+      }
+    });
+  })
+  .then(stream => {
+    return new Response(stream, {
+      headers: {
+        "Content-Type": "text/csv"
+      }
+    }).text();
+  })
+  .then(text => {
+    let data = parseCSV(text);
+
+    // change country codes to country names
+    data.forEach(row => {
+      if (countryCodes[row['Country']]) {
+        row['Country'] = countryCodes[row['Country']];
+      }
+    });
+
+    let plotData = [{
+      type: 'choropleth',
+      locationmode: 'country names',
+      locations: data.map(row => row['Country']),
+      z: data.map(row => row['Total']),
+      text: data.map(row => row['Country']),
+      zmin: 0,
+      zmax: Math.max(...data.map(row => row['Total'])),
+      colorscale: [
+        [0, '#e0f8e0'],
+        [1, '#2d6d2c']
+      ],
+      autocolorscale: false
+    }];
+
+
+    let layout = {
+      title: 'Global Ivory Trade Map',
+      width: 1000,
+      height: 500,
+      geo: {
+        projection: {
+          type: 'robinson'
+        },
+        showocean: true,
+        oceancolor: 'lightblue',
+        showcountries: false,
+      }
+    };
+
+    Plotly.newPlot('map', plotData, layout);
+  });
+
+
+
+// Rhino Line Chart
 
 const csvFilePath2 = 'data/cleaned-data/southern-white-rhinos.csv';
 
