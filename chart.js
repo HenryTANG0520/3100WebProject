@@ -55,7 +55,7 @@ function getTrace(data, xColumn, yColumn) {
 }
 
 // Update the plot with default value
-updatePlot('Elephant');
+updatePlot('Whale');
 
 
 // 鲸鱼饼图
