@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>生物多样性危机：我们的地球需要我们的关注</title>
+  <title>Biodiversity Web Project</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="chart.css">
   <script src="script.js"></script>
@@ -15,12 +15,12 @@
 <body>
   <header>
     <nav>
-      <a href="#1">主页</a>
-      <a href="#2">物种数量变化</a>
-      <a href="#3">动物在自然中的作用</a>
-      <a href="#4">狩猎原因</a>
-      <a href="#5">我们能做什么</a>
-      <a href="#6">呼吁保护动物</a>
+      <a href="#1">Home</a>
+      <a href="#2">Species population</a>
+      <a href="#3">Role of animals in nature</a>
+      <a href="#4">Hunting purposes</a>
+      <a href="#5">What we can do</a>
+      <a href="#6">Call for animal protection</a>
     </nav>
   </header>
 
@@ -31,42 +31,50 @@
         <div class="slide whale"></div>
         <div class="slide elephant"></div>
       </div>
-      <h1 class="intro-heading">生物多样性危机：<br>我们的地球需要我们的关注</h1>
+      <h1 class="intro-heading">Biodiversity crisis:<br>No sale, no kill</h1>
     </div>
   </section>
 
 
-  <!-- 物种数量的变化 -->
+  <!-- Species population -->
   <div class="content">
     <article>
       <section id="2">
         <div class="text-content">
-          <h2>物种数量变化</h2>
+          <h2>Species population</h2>
           <p>
-            在过去的十年中，大约有9,396只非洲犀牛因为偷猎而丧生。从2008年开始，偷猎的数量在整个非洲持续增加，直到2015年达到峰值，当年有1,349只犀牛被杀。幸运的是，自那时以来，整个非洲大陆的偷猎数量有所下降，但至少每天仍有一只犀牛被杀。在南非，这个问题尤为严重，2013年至2017年期间，每年有超过1,000只犀牛被杀。2022年，南非有448只犀牛被杀，相比2021年减少了三只(<a
-              href="https://www.savetherhino.org/rhino-info/poaching-stats/" target="_blank">Save
-              the Rhino, 2018</a>)。
+            In the last decade, approximately 9,396 African rhinos have been killed due to poaching. From 2008, poaching
+            numbers continued to increase across Africa until peaking in 2015, when 1,349 rhinos were killed.
+            Fortunately, poaching has declined across the continent since then, but at least one rhino is still killed
+            every day. The problem is particularly acute in South Africa, where more than 1,000 rhinos were killed each
+            year between 2013 and 2017. 448 rhinos were killed in South Africa in 2022, a decrease of three from 2021(<a
+              href="https://www.savetherhino.org/rhino-info/poaching-stats/" target="_blank">Save the Rhino, 2018</a>).
           </p>
 
           <p>
-            关于大象，全球大约有450,000只。非洲大象的数量大约是亚洲大象的十倍。2015年，非洲大象的数量约为415,000只，而亚洲大象的数量在40,000到50,000只之间。然而，非洲大象的数量在过去的几个世纪里已经缩减了98%，从1500年的2500万只减少到了现在的数量。据估计，对于每100只活着的大象，大约有12只已经死亡。这表明大象的数量正在下降。而亚洲大象的数量在过去的一个世纪中减少了一半，从1900年初的100,000只减少到现在的40,000到50,000只(<a
-              href="https://ourworldindata.org/elephant-populations" target="_blank">Ritchie,
-              2022b</a>)。
+            Regarding elephants, there are about 450,000 of them worldwide. African elephants are approximately ten
+            times more numerous than Asian elephants. in 2015, African elephants numbered approximately 415,000, while
+            Asian elephants numbered between 40,000 and 50,000. However, the African elephant population has shrunk by
+            98% over the past few centuries, from 25 million in 1500. It is estimated that for every 100 elephants
+            alive, about 12 have died. This indicates that elephant populations are declining. And Asian elephant
+            populations have halved in the past century, from 100,000 in the early 1900s to 40,000 to 50,000 today(<a
+              href="https://ourworldindata.org/elephant-populations" target="_blank">Ritchie, 2022c</a>).
           </p>
         </div>
 
 
       </section>
 
-      <!-- 图表1 -->
+      <!-- Chart 1 -->
       <div class="chart" id="line-chart">
 
         <div id="line-chart-1"></div>
 
         <div class="button-group">
-          <button onclick="updatePlot('Rhino')">Rhino</button>
-          <button onclick="updatePlot('Elephant')">Elephant</button>
           <button onclick="updatePlot('Whale')">Whale</button>
+          <button onclick="updatePlot('Elephant')">Elephant</button>
+          <button onclick="updatePlot('Rhino')">Rhino</button>
+
 
         </div>
         <!-- <script src="chart.js"></script> -->
@@ -76,134 +84,158 @@
       <!-- ----------------------- -->
 
 
-      <!-- 物种减少所带来的危害 （文字介绍）-->
-      <section id="3">
+      <!-- The harm caused by species decline (text)-->
+      <section id="3" class="background-img" style="background-image: url('img/elephant/elephant.jpg'); ">
         <div class="text-content">
-          <h2>动物在自然界中的作用</h2>
+          <h2>Roles of animals in nature</h2>
           <div class="paragraph">
-            <h3>鲸鱼</h3>
+            <h3>Whale</h3>
             <p>
-              鲸鱼对食物链至关重要，稳定食物流动并维持健康的海洋。因此，鲸鱼数量迅速减少将对海洋生态系统产生重大影响。鲸鱼对维持健康的海洋生物至关重要，通过调节海洋食物流来维持不同物种之间的健康平衡。鲸鱼在整个海洋生物的能量流动和生物泵中发挥着重要作用(<a
-                href="http://whalingecosystems.weebly.com/ecosystem.html" target="_blank">Lian & Lu, n.d.</a>)。
+              Whales are critical to the food chain, stabilizing food flow and maintaining healthy oceans. As a result,
+              a rapid decline in whale populations would have a major impact on marine ecosystems. Whales are critical
+              to maintaining healthy marine life by regulating ocean food flow to maintain a healthy balance between
+              different species. Whales play an important role in the energy flow and biological pump of marine life as
+              a whole(<a href="http://whalingecosystems.weebly.com/ecosystem.html" target="_blank">Lian & Lu, 2019</a>).
             </p>
-            <p>
-              佛蒙特大学伯灵顿分校的保护生物学家乔·罗曼在一封电子邮件中写道：“在商业捕鲸时代，鲸鱼尸体的减少可能导致了海洋中最早的人为灭绝。”。鲸鱼的死尸也是海洋中重要的食物来源。当一头鲸鱼死亡时，它几吨重的身体会掉到海底，喂养水下深处的海洋生物。一只40吨重的灰鲸所谓的“鲸鱼腐尸”为海底的生物提供了相当于2000多年正常碎屑和营养循环的碳增长(<a
-                href="https://www.science.org/content/article/rebounding-whale-populations-are-good-ocean-ecosystems?cookieSet=1"
-                target="_blank">Kintisch,2014</a>)。</p>
+
           </div>
           <div class="paragraph">
-            <h3>大象</h3>
+            <h3>Elephant</h3>
             <p>
-              大象，作为陆地上最大的动物，对于保持生物多样性起着至关重要的作用。它们通过在环境中活动，开辟出密集的植被，为其他动物提供食物和栖息地。这一行为不仅提供了必要的生物资源，而且帮助控制了灌木的生长，从而有效地限制了野火的发生。此外，大象还在植物种子的传播上发挥了关键作用，这有助于增加生物系统中的植物多样性。它们的移动活动能在土壤中留下深深的足迹，这些足迹在干旱季节可以积聚雨水，成为狒狒、羚羊等动物的重要水源(<a
+              Elephants, as the largest land animals, are crucial for biodiversity. They create paths in dense
+              vegetation, offering food and shelter to other animals. This behavior aids in preventing wildfires by
+              controlling shrub growth. Moreover, elephants facilitate plant diversity by dispersing seeds. Their
+              movements leave tracks that collect rainwater, serving as a vital water source for animals during the dry
+              season.(<a
                 href="https://davidshepherd.org/news/the-ecological-role-of-elephants-shaping-the-land-and-lending-a-hand/"
-                target="_blank">The Ecological Role of Elephants: Shaping the Land and Lending a Hand, 2020</a>)。</p>
+                target="_blank">David Shepherd Wildlife Foundation, 2020</a>).</p>
           </div>
           <div class="paragraph">
-            <h3>犀牛</h3>
+            <h3>Rhino</h3>
             <p>
-              犀牛是长久以来存在的物种，在生态系统中扮演至关重要的角色。它们作为重要的食草动物，对植被消耗巨大，进而塑造了非洲的壮丽景观。这种行为不仅对其他动物有益，还有助于保持生态系统的健康平衡。当地居民依赖于犀牛栖息地的自然资源来获得食物、燃料和收入。作为非洲"五大犀牛"之一，犀牛成为游客们热衷的观赏对象。因此，生态旅游对于当地人来说是一项重要的收入来源。通过协助保护犀牛，我们同时也在保护它们的栖息地，从而造福于人类和野生动物。这项工作还有助于支持当地社区，并确保子孙后代能够继续享用自然资源的恩泽(<a
+              Rhinos are crucial to the ecosystem as long-standing species. They consume vegetation, shaping the African
+              landscape and maintaining ecosystem balance. Local communities rely on rhino habitats for food, fuel, and
+              income. As part of the "Big Five," rhinos attract tourists, providing income through ecotourism.
+              Protecting rhinos safeguards their habitat, benefiting both people and wildlife. This work supports local
+              communities and ensures future generations can enjoy natural resources.(<a
                 href="https://wwf.panda.org/discover/knowledge_hub/endangered_species/rhinoceros/african_rhinos/"
-                target="_blank">WWF, 2014</a>)。</p>
+                target="_blank">WWF, 2014</a>).</p>
           </div>
         </div>
       </section>
 
-      <!-- 捕猎行为发生的位置（地图） -->
 
-
-      <!--  -->
       <section id="4">
         <div class="text-content">
           <h2>
-            狩猎原因
+            Hunting purposes
           </h2>
 
           <div class="paragraph">
-            <h3>鲸鱼</h3>
+            <h3>Whale</h3>
             <div class="pie-chart" id="chart-pie-1"></div>
             <!-- <script src="chart.js"></script> -->
             <p>
-              人们捕猎鲸鱼的主要原因在历史上主要是为了获取鲸油。鲸油曾被广泛用于照明，如街灯和家用灯油，以及润滑剂，甚至在皮肤护理产品中也有应用。在19世纪晚期，鲸油的使用达到了高峰。然而，随着石油和其他替代产品的出现，对鲸油的需求开始减少并最终停止。另外，鲸肉也被一些国家，如日本、挪威和美国，用作食物来源(<a
-                href="https://ourworldindata.org/whaling" target="_blank">Our World in Data, n.d.</a>)。</p>
+              People historically hunted whales primarily for whale oil, which was widely used for lighting (e.g.,
+              street lamps, household lamps), lubricants, and even skin care products. Its demand peaked in the late
+              19th century but declined and eventually ceased with the introduction of oil and other alternatives.
+              Additionally, whale meat serves as a food source in countries like Japan, Norway, and the United
+              States.(<a href="https://ourworldindata.org/whaling" target="_blank">Ritchie, 2022a</a>)。</p>
           </div>
           <div class="paragraph">
-            <h3>大象</h3>
+            <h3>Elephant</h3>
 
-            <!-- 插入大象饼图 -->
             <div class="pie-chart" id="chart-pie-2"></div>
             <!-- <script src="chart.js"></script> -->
 
             <p>
-              大象通常被捕杀主要是由于其象牙的高价值。大象象牙在全球范围内的非法贸易市场上有很高的需求，特别是在亚洲的一些地方，人们把象牙视为奢侈品。此外，大象的肉和皮也有一定的市场。尽管国际社会已经对非法象牙贸易进行了严格的打击，但由于这些产品的高价值，大象仍然面临被捕猎的威胁。
+              Elephants are hunted for their valuable ivory, which is in high demand, particularly in parts of Asia
+              where it is considered a luxury item. There is also a market for elephant meat and skins. Despite efforts
+              to curb the illegal ivory trade, elephants remain at risk of hunting due to the high value of these
+              products.
             </p>
             <p>
-              非洲象因其象牙而被大规模猎杀，而且森林砍伐和农业扩张也在削减它们的栖息地。亚洲象的情况相似，但由于它们的象牙不如非洲象的丰富，所以盗猎的威胁相对较小(<a
-                href="https://ourworldindata.org/elephant-populations" target="_blank">Our World in Data, n.d.</a>)</p>
+              African elephants face large-scale hunting for ivory and habitat loss due to deforestation and
+              agricultural expansion. Asian elephants are also affected but have a lower risk of poaching due to their
+              less abundant tusks.(<a href="https://ourworldindata.org/elephant-populations" target="_blank">Ritchie,
+                2022b.</a>).</p>
           </div>
           <div class="paragraph">
-            <h3>犀牛</h3>
+            <h3>Rhino</h3>
 
-            <!-- 插入犀牛饼图 -->
             <div class="pie-chart" id="chart-pie-3"></div>
             <!-- <script src="chart.js"></script> -->
             <p>
-              犀牛的捕杀主要原因在于对犀牛角和身体部分的需求。犀牛角被视为奢侈品，并且在亚洲国家中被用于传统中医药和其他用途。犀牛角由角蛋白构成，这种物质也可以在鹦鹉的喙、海龟的喙和马的蹄中找到。尽管犀牛角自1993年以来已经被禁止用于医疗用途，但是由于许多人相信它具有药用属性，犀牛角的需求仍然存在，这促使了偷猎犀牛的行为
-              (<a href="https://ourworldindata.org/rhino-populations">Our World in Data, n.d.</a>;<a
-                href="https://www.iapf.org/news/rhinos"> Anti-Poaching Foundation, n.d.</a>)。</p>
+              Rhino hunting primarily occurs due to the demand for their horn and body parts. Rhino horn is highly
+              valued as a luxury item and is used in traditional Chinese medicine and other purposes across Asia.
+              Despite a ban on its medical use since 1993, the persistent belief in its medicinal properties fuels the
+              demand for rhino horn, leading to poaching of these majestic animals.
+              (<a href="https://ourworldindata.org/rhino-populations" target="_blank">Ritchie, 2022b</a>;<a
+                href="https://www.iapf.org/news/rhinos" target="_blank"> IAPF, 2021</a>).</p>
           </div>
         </div>
 
       </section>
+
+      <!-- 捕猎行为发生的位置（地图） -->
+      <section>
+        <div id="map"></div>
+      </section>
+
+      <!--  -->
       <section class="empathy-content">
         <div class="text-content">
-          <h4>除了这些动物在经历这种遭遇外，<br>澳洲本地有以下动物遭遇猎杀的例子：</h4>
+          <h4>In addition to the fact that these animals are experiencing such encounters, there are local examples of
+            the following animals that have been hunted in Australia:</h4>
 
           <div class="paragraph">
 
-            <h5>海龟：</h5>
+            <h5>Sea Turtle：</h5>
 
             <div class="img-container">
               <img src="img/sea-turtle.webp" alt="sea-turtle" class="image">
             </div>
 
             <div class="square-container">
-              <p class="font-2">海龟因其独特的琥珀、黄色和棕色的壳被猎杀，其壳被制成纪念品和饰品，如首饰、发梳和太阳镜(<a
+              <p class="font-2">Sea turtles are hunted for their distinctive amber, yellow and brown shells, which are
+                made into souvenirs and accessories, such as jewelry, hair combs and sunglasses(<a
                   href="https://wwf.org.au/get-involved/surrender-your-shell/think-before-you-buy/" target="_blank">WWF,
-                  n.d.</a>)。</p>
+                  2018</a>).</p>
             </div>
 
           </div>
 
           <div class="paragraph">
 
-            <h5> 袋鼠：</h5>
+            <h5> Kangaroo：</h5>
 
             <div class="img-container">
               <img src="img/kangaroo.jpg" alt="kangaroo" class="image">
             </div>
 
             <div class="square-container">
-              <p class="font-2">澳洲的袋鼠产业依赖于大型袋鼠的猎杀，以生产肉类和皮革产品(<a
-                  href="https://www.panaprium.com/blogs/i/endangered-animals-clothing" target="_blank">Assoune,
-                  2020</a>；<a href="https://animalsaustralia.org/our-work/shooting-and-hunting/"
-                  target="_blank">Shooting
-                  &
-                  Hunting of Animals in Australia, n.d.</a>)。</p>
+              <p class="font-2">Australia's kangaroo industry relies on the hunting of large kangaroos to produce meat
+                and leather products(<a href="https://www.panaprium.com/blogs/i/endangered-animals-clothing"
+                  target="_blank">Assoune,
+                  2020</a>；<a href="https://animalsaustralia.org/our-work/shooting-and-hunting/" target="_blank">Animal
+                  Australia, n.d.-b</a>).</p>
             </div>
 
           </div>
 
+          <!--  -->
           <div class="paragraph">
 
-            <h5>其他本土动物：</h5>
+            <h5>Other native animals:</h5>
 
             <div class="img-container">
               <img src="img/dolphin.jpeg" alt="dolphin" class="image">
             </div>
             <div class="square-container">
-              <p class="font-2">澳洲的一些标志性动物，如海豚、飞狐和袋熊，也在联邦原住民土地法下被合法猎杀，尽管它们被认为处于濒危状态(<a
+              <p class="font-2">Some of Australia's iconic animals, such as dolphins, flying foxes and wombats, are also
+                legally hunted under federal Aboriginal land laws, even though they are considered endangered(<a
                   href="https://animalsaustralia.org/latest-news/protect-endangered-australian-animals/"
-                  target="_blank">Help Protect Australia’s Endangered Native Animals!, n.d.</a>)。</p>
+                  target="_blank">(Animal Australia, n.d.-a)</a>).</p>
             </div>
 
           </div>
@@ -211,40 +243,58 @@
       </section>
 
 
-      <section id="5" class="background-img">
+      <section id="5" class="background-img" style="background-image: url('img/rhino/rhino-sanctuary.jpg');">
 
         <div class="text-content">
-          <h2>我们能做什么</h2>
+          <h2>What we can do</h2>
           <p>
-            犀牛数量的增长主要归功于世界各地的保护工作。在20世纪，对这些物种的严密保护，特别是在非洲的自然保护区，导致了犀牛数量的显著快速增长。世界野生生物基金会（WWF）在犀牛保护工作中扮演了重要角色，他们积极安全保护犀牛种群，通过移栽建立新的种群，同时协助开展社区为基础的保护方法。此外，他们还通过实施创新技术并提高政府和社区巡逻员的能力来抑制偷猎行为，同时通过倡导和加强地方和国际执法力度来打击非法交易（<a
-              href="https://ourworldindata.org/rhino-populations" target="_blank">Our World in Data, n.d.</a>；<a
-              href="https://www.worldwildlife.org/species/rhino" target="_blank">World Wildlife Fund, n.d.</a>）。
+            Rhino populations have significantly increased due to global conservation efforts. Protection measures,
+            especially in African nature reserves, have led to a remarkable rise in rhino numbers in the 20th century.
+            The World Wildlife Fund (WWF) has played a vital role in rhino conservation by protecting and relocating
+            rhinos, as well as supporting community-based conservation. They also combat poaching through innovative
+            techniques, bolstering patrolling capacity, and advocating for stronger enforcement against illegal
+            trade.(<a href="https://ourworldindata.org/rhino-populations" target="_blank">Ritchie, 2022b</a>；<a
+              href="https://www.worldwildlife.org/species/rhino" target="_blank">(WWF, 2022)</a>).
           </p>
-          <p>当前犀牛种群状况：共有五种犀牛，其中三种（苏门答腊犀牛、爪哇犀牛和黑犀牛）被认为是“极度濒危”。另外两种犀牛，白犀牛和印度犀牛（大单角犀），在过去几十年里表现出一定程度的恢复。</p>
+          <p>Current rhino population status: There are five species of rhinoceros, three of which (Sumatran rhinoceros,
+            Javan rhinoceros and black rhinoceros) are considered "critically endangered". The other two species, the
+            white rhinoceros and the Indian rhinoceros (greater single-horned rhinoceros), have shown some degree of
+            recovery over the past few decades.</p>
 
-          <p>20世纪初，南方白犀牛数量骤减至仅剩20头。但经过20世纪的保护努力，其数量已恢复至超过21,000头。然而，最近几年盗猎活动增加导致数量再次下降。
+          <p>At the beginning of the 20th century, the southern white rhino population plummeted to just 20 individuals.
+            However, after conservation efforts in the 20th century, the population has recovered to over 21,000.
+            However, increased poaching in recent years has caused the population to decline again.
           </p>
-          印度犀牛种群数量从上世纪中叶的约40头增长到目前的超过4,000头，这得益于印度和尼泊尔在保护和减少盗猎方面的努力。
+          The Indian rhino population has grown from about 40 in the middle of the last century to more than 4,000
+          today, thanks to conservation and poaching reduction efforts in India and Nepal.
           </p>
         </div>
 
       </section>
       <div id="line-chart-2" class="chart"></div>
       <script src="chart.js"></script>
-      <section class="conclusion" id="6">
-        <!-- 结论部分 -->
+      <section class="conclusion background-img" id="6" style="background-image: url('img/whale/whale.jpg');">
+
+
+        <!-- call for action -->
         <div class="text-content">
-          <h2>呼吁保护动物</h2>
+          <h2>Call for animal protection</h2>
           <p>
-            保护犀牛、大象和鲸鱼等动物是当务之急。它们在生态系统中发挥着重要作用，但种群数量正急剧减少。为了拯救它们，我们需要采取行动。加强执法打击盗猎，提高公众意识，保护栖息地，国际合作和全球意识的提高至关重要。保护动物不仅关乎它们自身，也关系到地球生态系统和生物多样性的存续。现在是行动的时刻，让我们共同努力，保护这些珍贵的生物，为未来创造更美好的世界。
+            The conservation of animals such as rhinos, elephants and whales is a top priority. They play an important
+            role in the ecosystem, but populations are declining dramatically. To save them, we need to take action.
+            Increased enforcement against poaching, public awareness, habitat protection, international cooperation and
+            global awareness are essential. Protecting animals is not only about them, but also about the survival of
+            the Earth's ecosystem and biodiversity. No sale, no harm, now is the time to act, let's work together to
+            protect these precious creatures and create a better world for the future.
           </p>
         </div>
       </section>
 
-      <!-- 底部页脚 -->
+      <!-- footer -->
       <footer>
-        <p>数据来源：[数据来源链接]<br>
-          版权所有 © 2023 生物多样性危机项目</p>
+        <p>
+          Copyright © 2023 Chengrui Tang<br>
+          Biodiversity Web Project</p>
       </footer>
 
     </article>
